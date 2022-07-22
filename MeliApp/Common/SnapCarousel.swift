@@ -34,15 +34,29 @@ struct SnapCarousel: View {
                         widthOfHiddenCards: widthOfHiddenCards,
                         cardHeight: cardHeight
                     ) {
-                        WebImage(url: URL(string: item.secureURL))
-                            .resizable()
-                            .placeholder {
-                                Rectangle().foregroundColor(.gray)
+                        ZStack{
+                            WebImage(url: URL(string: item.secureURL))
+                                .resizable()
+                                .placeholder {
+                                    Rectangle().foregroundColor(.gray)
+                                }
+                                .indicator(.activity)
+                                .transition(.fade(duration: 0.5))
+                                .scaledToFit()
+                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                            VStack(alignment: .trailing){
+                                Spacer()
+                                HStack{
+                                    Text("\(index + 1)/\(pictures.count)")
+                                        .font(.custom("Nunito-SemiBold", size: 14))
+                                        .foregroundColor(Color.white)
+                                        .padding(5)
+                                        .background(Color.black.opacity(0.6))
+                                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                                        .padding(20)
+                                }
                             }
-                            .indicator(.activity)
-                            .transition(.fade(duration: 0.5))
-                            .scaledToFit()
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                        }
                     }
                     .cornerRadius(8)
                     .transition(AnyTransition.slide)
@@ -120,13 +134,13 @@ struct Carousel<Items : View> : View {
             self.UIState.screenDrag = 0
             
             if (value.translation.width < -50) {
-                self.UIState.activeCard = self.UIState.activeCard + 1
+                self.UIState.activeCard = (self.UIState.activeCard == Int(self.numberOfItems - 1)) ? Int(self.numberOfItems - 1) : self.UIState.activeCard + 1
                 let impactMed = UIImpactFeedbackGenerator(style: .medium)
                 impactMed.impactOccurred()
             }
             
             if (value.translation.width > 50) {
-                self.UIState.activeCard = self.UIState.activeCard - 1
+                self.UIState.activeCard = (self.UIState.activeCard == 0) ? 0:self.UIState.activeCard - 1
                 let impactMed = UIImpactFeedbackGenerator(style: .medium)
                 impactMed.impactOccurred()
             }
