@@ -18,14 +18,22 @@ struct SearchView: View {
                 if self.searchViewModel.isLoading {
                     ProgressView()
                 }else if self.searchViewModel.searchResults.isEmpty {
-                    Text("Búsqueda")
-                        .font(.custom("Nunito-Regular", size: 20))
-                        .foregroundColor(Color(UIColor(named: "textColor") ?? .red))
-                        .padding(.trailing, 5)
-                    Text("Aquí encontrarás los resultados de tu búsqueda")
-                        .font(.custom("Nunito-SemiBold", size: 14))
-                        .foregroundColor(Color(UIColor(named: "textColor")!))
-                        .padding(.trailing, 5)
+                    Spacer()
+                    HStack{
+                        Spacer()
+                        VStack{
+                            Text("Búsqueda")
+                                .font(.custom("Nunito-Regular", size: 20))
+                                .foregroundColor(Color(UIColor(named: "textColor") ?? .red))
+                                .padding(.trailing, 5)
+                            Text("Aquí encontrarás los resultados de tu búsqueda")
+                                .font(.custom("Nunito-SemiBold", size: 14))
+                                .foregroundColor(Color(UIColor(named: "textColor")!))
+                                .padding(.trailing, 5)
+                        }
+                        Spacer()
+                    }
+                    Spacer()
                 }else{
                     List {
                         ForEach(self.searchViewModel.searchResults, id: \.id) { item in
@@ -39,19 +47,32 @@ struct SearchView: View {
                 }
             }
             .navigationTitle("MeliApp")
-            .searchable(text: self.$searchViewModel.query, placement: .navigationBarDrawer(displayMode: .always))
-            .onChange(of: self.searchViewModel.query, perform: { newValue in
-                if newValue.isEmpty {
-                    self.searchViewModel.searchResults = []
+            .searchable(text: self.$searchViewModel.query, placement: .navigationBarDrawer(displayMode: .always), prompt: "Buscar", suggestions: {
+                ForEach(self.searchViewModel.suges, id: \.self){ suges in
+                    if let sugesSafe = suges.q {
+                     Label("\(sugesSafe)", systemImage: "magnifyingglass")
+                            .font(.custom("Nunito-SemiBold", size: 16))
+                            .foregroundColor(Color(UIColor(named: "textColor")!))
+                            .searchCompletion(sugesSafe)
+                    }
                 }
-            })
-            
+            }).disableAutocorrection(true)
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onSubmit(of: .search) {
+            resetSuges()
             self.searchViewModel.isLoading = true
-            filterRecipes()
+            getSearch()
         }
+        .onChange(of: self.searchViewModel.query, perform: { newValue in
+            if newValue.isEmpty {
+                self.searchViewModel.searchResults = []
+            }else{
+                if !self.searchViewModel.isLoading {
+                    getSuges()
+                }
+            }
+        })
         .alert("¡Ups!", isPresented: $searchViewModel.hasError) {
         } message: {
             Text("Hubo un problema al obtener los resultaados de la búsqueda. Por favor inténtelo mas tarde")
@@ -62,10 +83,20 @@ struct SearchView: View {
         }
     }
     
-    func  filterRecipes () {
+    private func getSearch() {
         Task {
             await searchViewModel.getSearch()
         }
+    }
+    
+    private func  getSuges() {
+        Task {
+            await searchViewModel.getAutosuggest()
+        }
+    }
+    
+    private func resetSuges() {
+        self.searchViewModel.suges = []
     }
 }
 

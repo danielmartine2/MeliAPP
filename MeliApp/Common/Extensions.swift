@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 extension Date {
     func getFormattedDate(dateString: String) -> String {
@@ -14,5 +15,11 @@ extension Date {
         let date = dateFormatter.date(from: dateString) ?? Date()
         dateFormatter.dateFormat = "MMM dd,yyyy"
         return dateFormatter.string(from: date)
+    }
+}
+
+extension View {
+    func hideKeyboard(){
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }

@@ -9,7 +9,8 @@ import Foundation
 
 class SearchViewModel: ObservableObject {
     
-    let getSearchUseCase: GetSearch
+    let getSearch: GetSearch
+    let getAutosuggest: GetAutosuggest
     
     @Published var searchResults: [SearchResult] = []
     @Published var query: String = ""
@@ -17,14 +18,16 @@ class SearchViewModel: ObservableObject {
     @Published var isEmpty = false
     @Published var messageError: String = ""
     @Published var isLoading: Bool = false
+    @Published var suges: [SuggestedQuery] = []
     
-    init(getSearchUseCase: GetSearch) {
-        self.getSearchUseCase = getSearchUseCase
+    init(getSearchUse: GetSearch, getAutosuggest: GetAutosuggest) {
+        self.getSearch = getSearchUse
+        self.getAutosuggest = getAutosuggest
     }
     
     @MainActor
     func getSearch() async {
-        let result = await getSearchUseCase.execute(query: self.query)
+        let result = await getSearch.execute(query: self.query)
         self.isLoading = false
         switch result{
         case .success(let result):
@@ -35,6 +38,17 @@ class SearchViewModel: ObservableObject {
             hasError = true
             messageError = error.localizedDescription
             self.query = ""
+        }
+    }
+    
+    @MainActor
+    func getAutosuggest() async {
+        let result = await getAutosuggest.execute(query: self.query)
+        switch result{
+        case .success(let result):
+            self.suges = result
+        default:
+            print("without suges")
         }
     }
     

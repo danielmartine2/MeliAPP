@@ -27,9 +27,6 @@ struct SheetDetailView: View {
                 
                 VStack{
                     WebImage(url: URL(string: urlImage))
-                        .onFailure{ error in
-                            print(error)
-                        }
                         .resizable()
                         .placeholder {
                             Rectangle().foregroundColor(.gray)
