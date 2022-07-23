@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Alamofire
 
 struct DetailApiImpl: DetailDataSource {
     
@@ -28,7 +27,7 @@ struct DetailApiImpl: DetailDataSource {
         switch(response.statusCode){
         case 200:
             let str = String(decoding:data, as: UTF8.self)
-            print(str)
+            //print(str)
             guard let result = try? JSONDecoder().decode(DetailResponse.self, from: data) else {
                 throw NetworkError.jsonDecodingError
             }

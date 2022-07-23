@@ -15,4 +15,6 @@ struct EndPoints {
     static let urlImage = "https://http2.mlstatic.com/D_"
     //Detail urls
     static let detail = "\(BASE_URL)items/"
+    //Autosuggest urls
+    static let autosuggest = "\(BASE_URL)sites/\(SITE_ID)/autosuggest"
 }

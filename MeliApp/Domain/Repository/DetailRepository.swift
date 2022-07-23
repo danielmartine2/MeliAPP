@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 
 protocol DetailRepository {
     func getDetail(idItem: String) async throws -> DetailResponse

@@ -1,24 +1,25 @@
 //
-//  SearchApiImpl.swift
+//  AutosuggestApiImpl.swift
 //  MeliApp
 //
-//  Created by Daniel Eduardo Martinez Herrera on 19/07/22.
+//  Created by Daniel Eduardo Martinez Herrera on 22/07/22.
 //
 
 import Foundation
-import Alamofire
 
-struct SearchApiImpl: SearchDataSource {
+struct AutosuggestApiImpl: AutosuggestDataSource {
     
     let url: String
     
-    func getSearch(query: String) async throws -> SearchResponse {
+    func getAutosuggest(query: String) async throws -> [SuggestedQuery] {
+        
+        let limit = 20
         
         guard let escapedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
             throw NetworkError.badUrl
         }
         
-        guard let url = URL(string: "\(url)?q=\(escapedQuery)") else{
+        guard let url = URL(string: "\(url)?limit=\(limit)&q=\(escapedQuery)") else{
             throw NetworkError.badUrl
         }
         
@@ -33,15 +34,10 @@ struct SearchApiImpl: SearchDataSource {
         
         switch(response.statusCode){
         case 200:
-            let str = String(decoding:data, as: UTF8.self)
-            //print(str)
-            guard let result = try? JSONDecoder().decode(SearchResponse.self, from: data) else {
+            guard let result = try? JSONDecoder().decode(AutosuggestResponse.self, from: data) else {
                 throw NetworkError.jsonDecodingError
             }
-            return result
-            
-        case 401:
-            throw NetworkError.unAuthorized
+            return result.suggestedQueries
             
         case 400..<500:
             throw NetworkError.badRequest(message: "Bad Request")
@@ -51,3 +47,4 @@ struct SearchApiImpl: SearchDataSource {
         }
     }
 }
+
