@@ -19,6 +19,7 @@ class SearchViewModel: ObservableObject {
     @Published var messageError: String = ""
     @Published var isLoading: Bool = false
     @Published var suges: [SuggestedQuery] = []
+    @Published var isSearching: Bool = false
     
     init(getSearchUse: GetSearch, getAutosuggest: GetAutosuggest) {
         self.getSearch = getSearchUse
@@ -44,6 +45,7 @@ class SearchViewModel: ObservableObject {
     @MainActor
     func getAutosuggest() async {
         let result = await getAutosuggest.execute(query: self.query)
+        self.isSearching = true
         switch result{
         case .success(let result):
             self.suges = result

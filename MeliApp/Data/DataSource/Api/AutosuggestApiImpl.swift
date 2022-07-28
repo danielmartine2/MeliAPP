@@ -13,7 +13,7 @@ struct AutosuggestApiImpl: AutosuggestDataSource {
     
     func getAutosuggest(query: String) async throws -> [SuggestedQuery] {
         
-        let limit = 20
+        let limit = 15
         
         guard let escapedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
             throw NetworkError.badUrl

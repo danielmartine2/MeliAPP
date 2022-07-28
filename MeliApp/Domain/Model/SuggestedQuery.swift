@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SuggestedQuery: Codable, Identifiable, Hashable {
+struct SuggestedQuery: Codable, Hashable {
     let id: UUID = UUID()
     let q: String?
 

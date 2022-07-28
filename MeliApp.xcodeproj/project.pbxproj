@@ -54,6 +54,8 @@
 		5146510D2889EA2E0051FB57 /* ZoomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5146510C2889EA2E0051FB57 /* ZoomImage.swift */; };
 		5146510F2889EADF0051FB57 /* SheetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5146510E2889EADF0051FB57 /* SheetDetailView.swift */; };
 		51465111288A24180051FB57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51465110288A24180051FB57 /* LaunchScreen.storyboard */; };
+		51A64A1528921DBD00A4A8A8 /* SuggestionContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A64A1428921DBD00A4A8A8 /* SuggestionContentView.swift */; };
+		51BFE992288D11C400F88ED8 /* SearchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BFE991288D11C400F88ED8 /* SearchContentView.swift */; };
 		51CDE763288B8B1300B9D0A2 /* AutosuggestRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDE762288B8B1300B9D0A2 /* AutosuggestRepositoryImpl.swift */; };
 		51CDE765288B8B6700B9D0A2 /* AutosuggestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDE764288B8B6700B9D0A2 /* AutosuggestRepository.swift */; };
 		51CDE767288B8C4C00B9D0A2 /* AutosuggestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDE766288B8C4C00B9D0A2 /* AutosuggestResponse.swift */; };
@@ -129,6 +131,8 @@
 		5146510C2889EA2E0051FB57 /* ZoomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomImage.swift; sourceTree = "<group>"; };
 		5146510E2889EADF0051FB57 /* SheetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetDetailView.swift; sourceTree = "<group>"; };
 		51465110288A24180051FB57 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		51A64A1428921DBD00A4A8A8 /* SuggestionContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionContentView.swift; sourceTree = "<group>"; };
+		51BFE991288D11C400F88ED8 /* SearchContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchContentView.swift; sourceTree = "<group>"; };
 		51CDE762288B8B1300B9D0A2 /* AutosuggestRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutosuggestRepositoryImpl.swift; sourceTree = "<group>"; };
 		51CDE764288B8B6700B9D0A2 /* AutosuggestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutosuggestRepository.swift; sourceTree = "<group>"; };
 		51CDE766288B8C4C00B9D0A2 /* AutosuggestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutosuggestResponse.swift; sourceTree = "<group>"; };
@@ -351,7 +355,9 @@
 			children = (
 				514650D428888BE40051FB57 /* SearchViewModel.swift */,
 				514650D228888BAA0051FB57 /* SearchView.swift */,
+				51BFE991288D11C400F88ED8 /* SearchContentView.swift */,
 				514650E02888A4620051FB57 /* ItemSearchView.swift */,
+				51A64A1428921DBD00A4A8A8 /* SuggestionContentView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -554,6 +560,7 @@
 				51070BBB28873D3C00F516EC /* Paging.swift in Sources */,
 				510182652887D7E400DB1808 /* SearchRepositoryImpl.swift in Sources */,
 				514650F728891F580051FB57 /* DetailApiImpl.swift in Sources */,
+				51BFE992288D11C400F88ED8 /* SearchContentView.swift in Sources */,
 				51465109288982A20051FB57 /* AttributeView.swift in Sources */,
 				51070BBD28873D9B00F516EC /* SearchResult.swift in Sources */,
 				51070BB92887176C00F516EC /* SearchResponse.swift in Sources */,
@@ -562,6 +569,7 @@
 				51070BBF28873F6100F516EC /* Location.swift in Sources */,
 				51070BD128875D8300F516EC /* DetailRepository.swift in Sources */,
 				51CDE769288B8C8C00B9D0A2 /* SuggestedQuery.swift in Sources */,
+				51A64A1528921DBD00A4A8A8 /* SuggestionContentView.swift in Sources */,
 				514650DA288890CD0051FB57 /* MainAssembly.swift in Sources */,
 				514650D0288885760051FB57 /* GetSearch.swift in Sources */,
 				51070B8A28862A9500F516EC /* MeliAppApp.swift in Sources */,

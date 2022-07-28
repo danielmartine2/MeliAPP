@@ -14,54 +14,18 @@ struct SearchView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                if self.searchViewModel.isLoading {
-                    ProgressView()
-                }else if self.searchViewModel.searchResults.isEmpty {
-                    Spacer()
-                    HStack{
-                        Spacer()
-                        VStack{
-                            Text("Búsqueda")
-                                .font(.custom("Nunito-Regular", size: 20))
-                                .foregroundColor(Color(UIColor(named: "textColor") ?? .red))
-                                .padding(.trailing, 5)
-                            Text("Aquí encontrarás los resultados de tu búsqueda")
-                                .font(.custom("Nunito-SemiBold", size: 14))
-                                .foregroundColor(Color(UIColor(named: "textColor")!))
-                                .padding(.trailing, 5)
-                        }
-                        Spacer()
-                    }
-                    Spacer()
-                }else{
-                    List {
-                        ForEach(self.searchViewModel.searchResults, id: \.id) { item in
-                            NavigationLink {
-                                DetailView(idDetail: item.id).environmentObject(DetailViewModel(getDetailUseCase: GetDetailUseCase(repository: DetailRepositoryImpl(dataSource: DetailApiImpl()))))
-                            } label: {
-                                ItemSearchView(itemData: item)
-                            }
-                        }
-                    }
-                }
-            }
+            SearchContentView()
             .navigationTitle("MeliApp")
             .searchable(text: self.$searchViewModel.query, placement: .navigationBarDrawer(displayMode: .always), prompt: "Buscar", suggestions: {
-                ForEach(self.searchViewModel.suges, id: \.self){ suges in
-                    if let sugesSafe = suges.q {
-                     Label("\(sugesSafe)", systemImage: "magnifyingglass")
-                            .font(.custom("Nunito-SemiBold", size: 16))
-                            .foregroundColor(Color(UIColor(named: "textColor")!))
-                            .searchCompletion(sugesSafe)
-                    }
-                }
+                SuggestionContentView(action:{ sugges in
+                    self.searchViewModel.query = sugges
+                    getSearch()
+                    hideKeyboard()
+                })
             }).disableAutocorrection(true)
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onSubmit(of: .search) {
-            resetSuges()
-            self.searchViewModel.isLoading = true
             getSearch()
         }
         .onChange(of: self.searchViewModel.query, perform: { newValue in
@@ -84,6 +48,8 @@ struct SearchView: View {
     }
     
     private func getSearch() {
+            resetSuges()
+        self.searchViewModel.isLoading = true
         Task {
             await searchViewModel.getSearch()
         }
@@ -96,7 +62,7 @@ struct SearchView: View {
     }
     
     private func resetSuges() {
-        self.searchViewModel.suges = []
+        self.searchViewModel.isSearching = false
     }
 }
 
