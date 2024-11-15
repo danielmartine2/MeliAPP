@@ -26,6 +26,12 @@ struct AttributeView: View {
 
 struct AttributesView_Previews: PreviewProvider {
     static var previews: some View {
-        AttributeView(attribute: Attribute(id: "", name: "", valueID: "", valueName: "", attributeGroupID: "", attributeGroupName: ""))
+        let mockAttribute = Attribute(
+            id: "001",
+            name: "Color",
+            valueID: "red",
+            valueName: "Red"
+        )
+        AttributeView(attribute: mockAttribute)
     }
 }

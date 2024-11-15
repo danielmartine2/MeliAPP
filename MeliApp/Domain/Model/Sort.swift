@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - Sort
-struct Sort: Codable {
-    let id, name: String
+// MARK: - City
+struct City: Codable {
+    let id, name: String?
 }

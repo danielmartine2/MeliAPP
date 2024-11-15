@@ -11,7 +11,7 @@ import Foundation
 struct SearchResult: Codable {
     let id: String
     let title: String
-    let price: Int
+    let price: Double
     let thumbnail: String
     let thumbnailId: String
     let location: Location?

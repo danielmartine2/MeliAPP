@@ -60,7 +60,6 @@
 		51CDE76B288B8DF400B9D0A2 /* AutosuggestApiImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDE76A288B8DF400B9D0A2 /* AutosuggestApiImpl.swift */; };
 		51CDE76E288B8E2600B9D0A2 /* AutosuggestDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDE76D288B8E2600B9D0A2 /* AutosuggestDataSource.swift */; };
 		51CDE770288B91D200B9D0A2 /* GetAutosuggest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDE76F288B91D200B9D0A2 /* GetAutosuggest.swift */; };
-		51D976262CE6D93900736B21 /* SuggestionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D976252CE6D93900736B21 /* SuggestionRow.swift */; };
 		51F79CB729C6180300BEFCF3 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 51F79CB629C6180300BEFCF3 /* SDWebImageSwiftUI */; };
 		51F79CC029C61B0600BEFCF3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 51F79CBF29C61B0600BEFCF3 /* Alamofire */; };
 /* End PBXBuildFile section */
@@ -139,7 +138,6 @@
 		51CDE76A288B8DF400B9D0A2 /* AutosuggestApiImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutosuggestApiImpl.swift; sourceTree = "<group>"; };
 		51CDE76D288B8E2600B9D0A2 /* AutosuggestDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutosuggestDataSource.swift; sourceTree = "<group>"; };
 		51CDE76F288B91D200B9D0A2 /* GetAutosuggest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAutosuggest.swift; sourceTree = "<group>"; };
-		51D976252CE6D93900736B21 /* SuggestionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -352,7 +350,6 @@
 		514650D128888B7E0051FB57 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				51D976252CE6D93900736B21 /* SuggestionRow.swift */,
 				514650D428888BE40051FB57 /* SearchViewModel.swift */,
 				514650D228888BAA0051FB57 /* SearchView.swift */,
 				51BFE991288D11C400F88ED8 /* SearchContentView.swift */,
@@ -573,7 +570,6 @@
 				514650D0288885760051FB57 /* GetSearch.swift in Sources */,
 				51070B8A28862A9500F516EC /* MeliAppApp.swift in Sources */,
 				510182622887CC9700DB1808 /* EndPoints.swift in Sources */,
-				51D976262CE6D93900736B21 /* SuggestionRow.swift in Sources */,
 				51CDE76E288B8E2600B9D0A2 /* AutosuggestDataSource.swift in Sources */,
 				51CDE763288B8B1300B9D0A2 /* AutosuggestRepositoryImpl.swift in Sources */,
 				514650E12888A4620051FB57 /* ItemSearchView.swift in Sources */,

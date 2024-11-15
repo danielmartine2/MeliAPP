@@ -28,6 +28,11 @@ struct DetailApiImpl: DetailDataSource {
         case 200:
             let str = String(decoding:data, as: UTF8.self)
             //print(str)
+            do {
+                let result = try JSONDecoder().decode(DetailResponse.self, from: data)
+            } catch {
+                print("Decoding error detail: \(error)")
+            }
             guard let result = try? JSONDecoder().decode(DetailResponse.self, from: data) else {
                 throw NetworkError.jsonDecodingError
             }

@@ -35,9 +35,17 @@ struct SearchApiImpl: SearchDataSource {
         case 200:
             let str = String(decoding:data, as: UTF8.self)
             //print(str)
+            
+            do {
+                let result = try JSONDecoder().decode(SearchResponse.self, from: data)
+            } catch {
+                print("Decoding error: \(error)")
+            }
+            
             guard let result = try? JSONDecoder().decode(SearchResponse.self, from: data) else {
                 throw NetworkError.jsonDecodingError
             }
+         
             return result
             
         case 401:

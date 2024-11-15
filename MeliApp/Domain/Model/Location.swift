@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Location
 struct Location: Codable {
-    let state: Sort?
+    let state: City?
 
     enum CodingKeys: String, CodingKey {
         case state

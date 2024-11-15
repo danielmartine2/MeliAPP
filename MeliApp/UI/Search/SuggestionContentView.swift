@@ -9,20 +9,31 @@ import SwiftUI
 import Swinject
 
 struct SuggestionContentView: View {
+    
     @EnvironmentObject private var searchViewModel: SearchViewModel
     let action: (String) -> Void
     
     var body: some View {
-        if searchViewModel.isSearching {
-            VStack {
-                ForEach(searchViewModel.suges, id: \.self) { suges in
+        if self.searchViewModel.isSearching {
+            VStack{
+                ForEach(self.searchViewModel.suges, id: \.self){ suges in
                     if let sugesSafe = suges.q {
                         Button {
                             action(sugesSafe)
                         } label: {
-                            SuggestionRow(suggestion: sugesSafe, isLast: sugesSafe == searchViewModel.suges.last?.q)
-                        }
-                        .buttonStyle(BorderlessButtonStyle())
+                            VStack(alignment: .leading){
+                                HStack{
+                                    Image(systemName: "magnifyingglass")
+                                    Text("\(sugesSafe)")
+                                        .font(.custom("Nunito-SemiBold", size: 16))
+                                        .foregroundColor(Color(UIColor(named: "textColor")!))
+                                    Spacer()
+                                }
+                                if sugesSafe != self.searchViewModel.suges.last?.q {
+                                    Divider()
+                                }
+                            }
+                        }.buttonStyle(BorderlessButtonStyle())
                     }
                 }
             }
