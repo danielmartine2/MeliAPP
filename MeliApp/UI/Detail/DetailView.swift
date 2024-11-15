@@ -87,7 +87,7 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(idDetail: "")
+        DetailView(idDetail: "1").environmentObject(DetailViewModel(getDetailUseCase: GetDetailUseCase(repository: DetailRepositoryImpl(dataSource: DetailApiImpl()))))
     }
 }
 

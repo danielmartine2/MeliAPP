@@ -28,7 +28,6 @@
 		51070BD128875D8300F516EC /* DetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51070BD028875D8300F516EC /* DetailRepository.swift */; };
 		51070BD32887C34B00F516EC /* SearchApiImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51070BD22887C34B00F516EC /* SearchApiImpl.swift */; };
 		51070BD52887C39E00F516EC /* SearchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51070BD42887C39E00F516EC /* SearchDataSource.swift */; };
-		514650CE2888757A0051FB57 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 514650CD2888757A0051FB57 /* Alamofire */; };
 		514650D0288885760051FB57 /* GetSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514650CF288885760051FB57 /* GetSearch.swift */; };
 		514650D328888BAA0051FB57 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514650D228888BAA0051FB57 /* SearchView.swift */; };
 		514650D528888BE40051FB57 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514650D428888BE40051FB57 /* SearchViewModel.swift */; };
@@ -37,7 +36,6 @@
 		514650DF288891D00051FB57 /* SearchAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514650DE288891D00051FB57 /* SearchAssembly.swift */; };
 		514650E12888A4620051FB57 /* ItemSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514650E02888A4620051FB57 /* ItemSearchView.swift */; };
 		514650E32888D3140051FB57 /* SearchResultMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514650E22888D3140051FB57 /* SearchResultMock.swift */; };
-		514650E82888E2200051FB57 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 514650E72888E2200051FB57 /* SDWebImageSwiftUI */; };
 		514650F0288903A90051FB57 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 514650ED288903A90051FB57 /* Nunito-Regular.ttf */; };
 		514650F1288903A90051FB57 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 514650EE288903A90051FB57 /* Nunito-SemiBold.ttf */; };
 		514650F2288903A90051FB57 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 514650EF288903A90051FB57 /* Nunito-Bold.ttf */; };
@@ -53,7 +51,6 @@
 		5146510B2889DB4F0051FB57 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5146510A2889DB4F0051FB57 /* Extensions.swift */; };
 		5146510D2889EA2E0051FB57 /* ZoomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5146510C2889EA2E0051FB57 /* ZoomImage.swift */; };
 		5146510F2889EADF0051FB57 /* SheetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5146510E2889EADF0051FB57 /* SheetDetailView.swift */; };
-		51465111288A24180051FB57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51465110288A24180051FB57 /* LaunchScreen.storyboard */; };
 		51A64A1528921DBD00A4A8A8 /* SuggestionContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A64A1428921DBD00A4A8A8 /* SuggestionContentView.swift */; };
 		51BFE992288D11C400F88ED8 /* SearchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BFE991288D11C400F88ED8 /* SearchContentView.swift */; };
 		51CDE763288B8B1300B9D0A2 /* AutosuggestRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDE762288B8B1300B9D0A2 /* AutosuggestRepositoryImpl.swift */; };
@@ -63,6 +60,9 @@
 		51CDE76B288B8DF400B9D0A2 /* AutosuggestApiImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDE76A288B8DF400B9D0A2 /* AutosuggestApiImpl.swift */; };
 		51CDE76E288B8E2600B9D0A2 /* AutosuggestDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDE76D288B8E2600B9D0A2 /* AutosuggestDataSource.swift */; };
 		51CDE770288B91D200B9D0A2 /* GetAutosuggest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDE76F288B91D200B9D0A2 /* GetAutosuggest.swift */; };
+		51D976262CE6D93900736B21 /* SuggestionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D976252CE6D93900736B21 /* SuggestionRow.swift */; };
+		51F79CB729C6180300BEFCF3 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 51F79CB629C6180300BEFCF3 /* SDWebImageSwiftUI */; };
+		51F79CC029C61B0600BEFCF3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 51F79CBF29C61B0600BEFCF3 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,7 +130,6 @@
 		5146510A2889DB4F0051FB57 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5146510C2889EA2E0051FB57 /* ZoomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomImage.swift; sourceTree = "<group>"; };
 		5146510E2889EADF0051FB57 /* SheetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetDetailView.swift; sourceTree = "<group>"; };
-		51465110288A24180051FB57 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		51A64A1428921DBD00A4A8A8 /* SuggestionContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionContentView.swift; sourceTree = "<group>"; };
 		51BFE991288D11C400F88ED8 /* SearchContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchContentView.swift; sourceTree = "<group>"; };
 		51CDE762288B8B1300B9D0A2 /* AutosuggestRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutosuggestRepositoryImpl.swift; sourceTree = "<group>"; };
@@ -140,6 +139,7 @@
 		51CDE76A288B8DF400B9D0A2 /* AutosuggestApiImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutosuggestApiImpl.swift; sourceTree = "<group>"; };
 		51CDE76D288B8E2600B9D0A2 /* AutosuggestDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutosuggestDataSource.swift; sourceTree = "<group>"; };
 		51CDE76F288B91D200B9D0A2 /* GetAutosuggest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAutosuggest.swift; sourceTree = "<group>"; };
+		51D976252CE6D93900736B21 /* SuggestionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,8 +147,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				514650E82888E2200051FB57 /* SDWebImageSwiftUI in Frameworks */,
-				514650CE2888757A0051FB57 /* Alamofire in Frameworks */,
+				51F79CB729C6180300BEFCF3 /* SDWebImageSwiftUI in Frameworks */,
+				51F79CC029C61B0600BEFCF3 /* Alamofire in Frameworks */,
 				514650DD2888917D0051FB57 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,7 +225,6 @@
 				51070BB32887131F00F516EC /* App */,
 				51070B8D28862A9800F516EC /* Assets.xcassets */,
 				51070B8F28862A9800F516EC /* Preview Content */,
-				51465110288A24180051FB57 /* LaunchScreen.storyboard */,
 			);
 			path = MeliApp;
 			sourceTree = "<group>";
@@ -353,6 +352,7 @@
 		514650D128888B7E0051FB57 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				51D976252CE6D93900736B21 /* SuggestionRow.swift */,
 				514650D428888BE40051FB57 /* SearchViewModel.swift */,
 				514650D228888BAA0051FB57 /* SearchView.swift */,
 				51BFE991288D11C400F88ED8 /* SearchContentView.swift */,
@@ -410,9 +410,9 @@
 			);
 			name = MeliApp;
 			packageProductDependencies = (
-				514650CD2888757A0051FB57 /* Alamofire */,
 				514650DC2888917D0051FB57 /* Swinject */,
-				514650E72888E2200051FB57 /* SDWebImageSwiftUI */,
+				51F79CB629C6180300BEFCF3 /* SDWebImageSwiftUI */,
+				51F79CBF29C61B0600BEFCF3 /* Alamofire */,
 			);
 			productName = MeliApp;
 			productReference = 51070B8628862A9500F516EC /* MeliApp.app */;
@@ -487,9 +487,9 @@
 			);
 			mainGroup = 51070B7D28862A9500F516EC;
 			packageReferences = (
-				514650CC2888757A0051FB57 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				514650DB2888917D0051FB57 /* XCRemoteSwiftPackageReference "Swinject" */,
-				514650E62888E2200051FB57 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				51F79CB529C6180300BEFCF3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				51F79CBE29C61B0600BEFCF3 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 51070B8728862A9500F516EC /* Products */;
 			projectDirPath = "";
@@ -510,7 +510,6 @@
 				514650F1288903A90051FB57 /* Nunito-SemiBold.ttf in Resources */,
 				514650F2288903A90051FB57 /* Nunito-Bold.ttf in Resources */,
 				514650F0288903A90051FB57 /* Nunito-Regular.ttf in Resources */,
-				51465111288A24180051FB57 /* LaunchScreen.storyboard in Resources */,
 				51070B9128862A9800F516EC /* Preview Assets.xcassets in Resources */,
 				51070B8E28862A9800F516EC /* Assets.xcassets in Resources */,
 			);
@@ -574,6 +573,7 @@
 				514650D0288885760051FB57 /* GetSearch.swift in Sources */,
 				51070B8A28862A9500F516EC /* MeliAppApp.swift in Sources */,
 				510182622887CC9700DB1808 /* EndPoints.swift in Sources */,
+				51D976262CE6D93900736B21 /* SuggestionRow.swift in Sources */,
 				51CDE76E288B8E2600B9D0A2 /* AutosuggestDataSource.swift in Sources */,
 				51CDE763288B8B1300B9D0A2 /* AutosuggestRepositoryImpl.swift in Sources */,
 				514650E12888A4620051FB57 /* ItemSearchView.swift in Sources */,
@@ -736,6 +736,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MeliApp/Preview Content\"";
@@ -745,8 +746,11 @@
 				INFOPLIST_FILE = MeliApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -765,6 +769,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MeliApp/Preview Content\"";
@@ -774,8 +779,11 @@
 				INFOPLIST_FILE = MeliApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -903,14 +911,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		514650CC2888757A0051FB57 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 		514650DB2888917D0051FB57 /* XCRemoteSwiftPackageReference "Swinject" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swinject/Swinject.git";
@@ -919,31 +919,39 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		514650E62888E2200051FB57 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+		51F79CB529C6180300BEFCF3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
 			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		51F79CBE29C61B0600BEFCF3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
+				minimumVersion = 5.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		514650CD2888757A0051FB57 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 514650CC2888757A0051FB57 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
 		514650DC2888917D0051FB57 /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 514650DB2888917D0051FB57 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
 		};
-		514650E72888E2200051FB57 /* SDWebImageSwiftUI */ = {
+		51F79CB629C6180300BEFCF3 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 514650E62888E2200051FB57 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			package = 51F79CB529C6180300BEFCF3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		51F79CBF29C61B0600BEFCF3 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 51F79CBE29C61B0600BEFCF3 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
